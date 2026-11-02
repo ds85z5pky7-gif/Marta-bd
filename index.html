@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Message for Marta 🎉</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Caveat:wght@600;700&display=swap">
+<style>
+:root{--ink:#fff7fb;--m1:#1a1040;--m2:#4b1d6b;--r1:#ff3d8b;--r2:#ff9a3c;--h1:#ff5e7e;--h2:#ffb347;--gold:#ffd84d;--mint:#5ff0c4;
+ --fd:'Fredoka','Trebuchet MS',system-ui,sans-serif;--fs:'Caveat','Segoe Script','Bradley Hand',cursive;color-scheme:dark}
+:root[data-theme="light"]{color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:linear-gradient(160deg,var(--m1),var(--m2));color:var(--ink);font-family:var(--fd);overflow:hidden;
+ transition:background 1s;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--m1)}
+body[data-mood="r"]{background:linear-gradient(160deg,#ff3d8b,#ff9a3c)}
+body[data-mood="h"]{background:linear-gradient(160deg,#ff5e7e,#ffb347 60%,#ffe08a)}
+#float{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+#float span{position:absolute;bottom:-60px;opacity:.5;animation:rise linear infinite}
+@keyframes rise{to{transform:translateY(-120vh) rotate(40deg)}}
+#stage{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+ gap:.55em;padding:5vh 6vw 9vh;text-align:center;max-width:720px;margin:0 auto}
+.line{display:block;line-height:1.12;text-shadow:0 3px 0 rgba(0,0,0,.18)}
+.line.sm{font-size:clamp(15px,4.2vw,20px);opacity:.92}
+.line.md{font-size:clamp(20px,6vw,30px);font-weight:600}
+.line.lg{font-size:clamp(28px,9vw,46px);font-weight:700}
+.line.xl{font-size:clamp(38px,13vw,72px);font-weight:700;color:var(--gold)}
+.line.xxl{font-size:clamp(48px,17vw,100px);font-weight:700;color:var(--gold);letter-spacing:.01em}
+.line.rb{font-size:clamp(40px,13.5vw,84px);font-weight:700;color:#fff}
+.line.script{font-family:var(--fs);font-size:clamp(34px,10vw,56px);font-weight:700;color:#fff}
+.w{display:inline-block;margin:0 .14em;opacity:0;animation:pop .55s cubic-bezier(.3,1.6,.5,1) var(--d) both}
+.fx-wob .w{animation:pop .55s cubic-bezier(.3,1.6,.5,1) var(--d) both,wob 1.8s ease-in-out calc(var(--d) + .7s) infinite}
+.fx-drop .w{animation:drop .8s cubic-bezier(.3,1.4,.5,1) var(--d) both}
+.fx-slam .w{animation:slam .7s cubic-bezier(.2,1.2,.4,1) var(--d) both,wob 1.4s ease-in-out calc(var(--d) + .9s) infinite}
+.fx-shake .w{animation:pop .5s ease var(--d) both,shake .35s linear calc(var(--d) + .5s) infinite}
+.rb .w:nth-child(odd){color:var(--gold)}
+.rb .w:nth-child(even){color:#fff}
+.rb .w{animation:pop .55s cubic-bezier(.3,1.6,.5,1) var(--d) both,wob 1.6s ease-in-out calc(var(--d) + .7s) infinite}
+@keyframes pop{0%{opacity:0;transform:scale(.1) translateY(30px) rotate(-12deg)}60%{opacity:1;transform:scale(1.3) rotate(5deg)}100%{opacity:1;transform:none}}
+@keyframes drop{0%{opacity:0;transform:translateY(-160px) rotate(-10deg)}70%{opacity:1;transform:translateY(12px) rotate(3deg)}100%{opacity:1;transform:none}}
+@keyframes slam{0%{opacity:0;transform:scale(5) rotate(8deg)}70%{opacity:1;transform:scale(.92)}100%{opacity:1;transform:none}}
+@keyframes wob{0%,100%{transform:rotate(-3deg) scale(1)}50%{transform:rotate(3deg) scale(1.06)}}
+@keyframes shake{0%,100%{transform:translate(0,0)}25%{transform:translate(-3px,2px) rotate(-2deg)}75%{transform:translate(3px,-2px) rotate(2deg)}}
+#hint{position:fixed;z-index:3;left:0;right:0;bottom:calc(env(safe-area-inset-bottom,0px) + 22px);text-align:center;font-size:15px;
+ opacity:0;transition:opacity .5s;pointer-events:none}
+#hint.on{opacity:.85;animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.08)}}
+#replay{display:none;margin-top:1em;font:700 18px var(--fd);color:#a3124f;background:#fff;border:0;border-radius:999px;padding:.7em 1.4em;
+ cursor:pointer;box-shadow:0 6px 0 rgba(0,0,0,.18)}
+#replay:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+#confetti{position:fixed;inset:0;z-index:1;pointer-events:none}
+.heart{display:inline-block;font-size:clamp(60px,20vw,110px);animation:beat 1s ease-in-out infinite;filter:drop-shadow(0 6px 0 rgba(0,0,0,.15))}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.25)}30%{transform:scale(1)}45%{transform:scale(1.18)}}
+@media (prefers-reduced-motion:reduce){.w,.fx-wob .w,.fx-slam .w,.fx-shake .w,.fx-drop .w,.rb .w{animation:pop .01s var(--d) both!important}#float span,.heart,#hint.on{animation:none}}
+</style>
+</head>
+<body data-mood="m">
+<div id="float" aria-hidden="true"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<main id="stage" aria-live="polite"></main>
+<div id="hint">tap to keep going 👆</div>
+<script>
+var S=[
+{m:'m',e:['✨','🤫','🌙','💌'],l:[
+ ['psst… Marta 🤫','sm'],
+ ['Somebody out there','md'],
+ ['has been thinking about you.','md'],
+ ['A SECRET ADMIRER 💌','xl fx-drop'],
+ ['Who could it be? 👀','md'],
+ ['They’ve been so patient…','sm'],
+ ['Hold your breath…','lg fx-shake']]},
+{m:'m',e:['✨','🤫','🌙','💌'],l:[
+ ['Okay. Here’s what we know…','sm'],
+ ['They adore your laugh.','md'],
+ ['They admire how you steal the last fry.','md'],
+ ['They are tall, mysterious, and slightly overdressed.','sm'],
+ ['And today… they confess.','lg fx-wob']]},
+{m:'m',e:['🥁','❓','✨','😳'],l:[
+ ['Drumroll, please…','md'],
+ ['🥁 🥁 🥁','xl fx-wob'],
+ ['Your secret admirer is…','lg'],
+ ['? ? ? ? ?','xl fx-shake']]},
+{m:'r',e:['🤡','🎈','🧦','😂'],l:[
+ ['…','sm'],
+ ['NOBODY.','xxl fx-slam'],
+ ['There is no admirer. It’s just me, Charles. Silly old me. 🤡','lg fx-wob'],
+ ['You thought you had a secret admirer 😂😂😂','lg fx-wob'],
+ ['Admit it. You almost bought it.','md'],
+ ['You blushed. I saw it. Marta!','md'],
+ ['(I’m wearing yesterday’s socks. Get a grip.)','sm']]},
+{m:'r',e:['🎂','🐍','🥜','💨','😤'],l:[
+ ['Speaking of yesterday…','sm'],
+ ['*scratches back* 😌','md'],
+ ['*BURRRP* 💨','xl fx-shake'],
+ ['(Yesterday’s nuts. They’re still talking.)','sm'],
+ ['But the REAL scandal…','md'],
+ ['You ate cake WITHOUT ME. 🎂😭😭😭','lg fx-wob'],
+ ['Sneaked it right behind my back. 😭😭','md'],
+ ['Betrayed by a snake. 🐍','lg fx-slam'],
+ ['(I forgive you. Obviously.)','sm']]},
+{m:'h',e:['💖','🎈','🎉','✨','🎂'],last:1,l:[
+ ['Okay, okay. Serious face. 😌','md'],
+ ['Marta, you’re 23 today!','lg'],
+ ['HAPPY BIRTHDAY!','rb'],
+ ['May this year be gentle with you,','md'],
+ ['full of laughter that hurts your cheeks,','md'],
+ ['and every good thing you’ve been wishing for.','md'],
+ ['You deserve all of it.','md'],
+ ['With all my heart,','sm'],
+ ['Charles','script'],
+ ['<span class="heart">❤️</span>','']]}
+];
+var stage=document.getElementById('stage'),hint=document.getElementById('hint'),fl=document.getElementById('float'),
+ i=-1,timer,ready=false,reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+function esc(t){return t}
+function build(sc){
+ stage.innerHTML='';var t=0.2;
+ sc.l.forEach(function(L){
+  var d=document.createElement('div');d.className='line '+L[1];
+  if(L[0].indexOf('<')===0){var s=document.createElement('span');s.className='w';s.style.setProperty('--d',t+'s');s.innerHTML=L[0];d.appendChild(s);t+=.6}
+  else L[0].split(' ').forEach(function(w){var s=document.createElement('span');s.className='w';s.style.setProperty('--d',t+'s');s.textContent=w;d.appendChild(s);t+=.13});
+  t+=.45;stage.appendChild(d)});
+ if(sc.last){var b=document.createElement('button');b.id='replay';b.textContent='Replay 🔁';b.style.display='block';b.style.opacity=0;
+  b.style.transition='opacity .6s '+t+'s';stage.appendChild(b);requestAnimationFrame(function(){b.style.opacity=1});
+  b.addEventListener('click',function(e){e.stopPropagation();go(0)});t+=.6}
+ return t}
+function floaters(sc){
+ fl.innerHTML='';
+ for(var k=0;k<16;k++){var s=document.createElement('span');s.textContent=sc.e[k%sc.e.length];
+  s.style.left=Math.random()*100+'%';s.style.fontSize=(18+Math.random()*30)+'px';
+  s.style.animationDuration=(9+Math.random()*10)+'s';s.style.animationDelay=(-Math.random()*14)+'s';fl.appendChild(s)}}
+function go(n){
+ clearTimeout(timer);hint.classList.remove('on');ready=false;i=n;
+ var sc=S[i];document.body.dataset.mood=sc.m;floaters(sc);
+ var total=build(sc);
+ if(sc.last){burst();timer=setTimeout(burst,3500);ready=false}
+ else timer=setTimeout(function(){ready=true;hint.classList.add('on')},reduce?300:total*1000+400)}
+function skip(){
+ stage.querySelectorAll('.w').forEach(function(w){w.style.setProperty('--d','0s')});
+ clearTimeout(timer);if(!S[i].last){ready=true;hint.classList.add('on')}}
+function tap(){
+ if(S[i].last)return;
+ if(ready&&i<S.length-1)go(i+1);else if(!ready)skip()}
+document.body.addEventListener('click',tap);
+document.addEventListener('keydown',function(e){if(e.key===' '||e.key==='Enter'||e.key==='ArrowRight'){if(e.target.id!=='replay'){e.preventDefault();tap()}}});
+
+/* confetti */
+var cv=document.getElementById('confetti'),cx=cv.getContext('2d'),P=[],run=false;
+function size(){cv.width=innerWidth;cv.height=innerHeight}size();addEventListener('resize',size);
+function burst(){
+ if(reduce)return;
+ var cols=['#fff','#ffd84d','#5ff0c4','#ff3d8b','#7b5cff','#ff9a3c'];
+ for(var k=0;k<140;k++)P.push({x:Math.random()*cv.width,y:-20-Math.random()*cv.height*.6,vx:(Math.random()-.5)*3,vy:2+Math.random()*4,
+  s:5+Math.random()*7,r:Math.random()*6,vr:(Math.random()-.5)*.3,c:cols[k%cols.length]});
+ if(!run){run=true;requestAnimationFrame(tick)}}
+function tick(){
+ cx.clearRect(0,0,cv.width,cv.height);
+ P=P.filter(function(p){p.x+=p.vx+Math.sin(p.y/40);p.y+=p.vy;p.r+=p.vr;return p.y<cv.height+20});
+ P.forEach(function(p){cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;cx.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);cx.restore()});
+ if(P.length)requestAnimationFrame(tick);else run=false}
+go(0);
+</script>
+</body>
+</html>
