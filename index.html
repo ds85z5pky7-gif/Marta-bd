@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>A Message for Marta 🎉</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Caveat:wght@600;700&display=swap">
+" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Caveat:wght@600;700&display=swap">
 <style>
 :root{--ink:#fff7fb;--m1:#1a1040;--m2:#4b1d6b;--r1:#ff3d8b;--r2:#ff9a3c;--h1:#ff5e7e;--h2:#ffb347;--gold:#ffd84d;--mint:#5ff0c4;
  --fd:'Fredoka','Trebuchet MS',system-ui,sans-serif;--fs:'Caveat','Segoe Script','Bradley Hand',cursive;color-scheme:dark}
@@ -158,11 +152,4 @@ function burst(){
   s:5+Math.random()*7,r:Math.random()*6,vr:(Math.random()-.5)*.3,c:cols[k%cols.length]});
  if(!run){run=true;requestAnimationFrame(tick)}}
 function tick(){
- cx.clearRect(0,0,cv.width,cv.height);
- P=P.filter(function(p){p.x+=p.vx+Math.sin(p.y/40);p.y+=p.vy;p.r+=p.vr;return p.y<cv.height+20});
- P.forEach(function(p){cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;cx.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);cx.restore()});
- if(P.length)requestAnimationFrame(tick);else run=false}
-go(0);
-</script>
-</body>
-</html>
+ cx.
